@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Passport Authentication</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+  <link rel="manifest" href="manifest.webmanifest">
+  <link href="stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">no capes</a>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+      
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Sign Up!</h2>
+        <form class="signup">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="firstNameLabel">First Name</label>
+            <input type="firstName" class="form-control" id="firstNameInput" placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <label for="lastNameLabel">Last Name</label>
+            <input type="lastName" class="form-control" id="lastNameInput" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+            <label for="zipCodeLabel">Zip Code</label>
+            <input type="zipCode" class="form-control" id="zipCodeInput" placeholder="Zip Code">
+          </div>
+          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span> <span class="msg"></span>
+          </div>
+          <button type="submit" class="btn btn-default">Sign Up</button>
+        </form>
+        <br />
+        <p>Or log in <a href="/login">here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/signup.js"></script>
+  <script>
+   if("serviceWorker" in navigator){
+     window.addEventListener("load", () => {
+       navigator.serviceWorker.register("service-worker.js").then(reg =>{
+         console.log("We found your service worker file",reg);
+       });
+     });
+   }
+  </script>
+
+</body>
+
+</html>
